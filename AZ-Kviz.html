@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pyramida šestiúhelníků</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #dadada;
+            font-family: Arial, sans-serif;
+        }
+
+        .pyramid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0px;
+        }
+
+        .row {
+            display: flex;
+            gap: 13px;
+        }
+
+        .hexagon {
+            width: 80px;
+            height: 80px;
+            background-color: white;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            transition: background-color 1s ease, color 1s ease; /* Animace změny barev */
+            cursor: pointer;
+        }
+
+        .hexagon span {
+            font-size: 24px;
+            font-weight: bold;
+            color: black;
+            transition: color 1s ease; /* Animace změny barvy textu */
+            pointer-events: none;
+        }
+
+        input {
+            margin-top: 20px;
+            padding: 8px;
+            font-size: 16px;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, opacity 0.5s ease;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input.open {
+            max-height: 40px;
+            opacity: 1;
+        }
+
+        .help-text {
+            font-size: 16px;
+            color: black;
+            margin-top: 20px;
+            max-width: 600px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="pyramid" id="pyramid"></div>
+    <input type="text" id="colorInput" placeholder="Například: 1a nebo 2blue. O přidá řádek, L odebere.">
+    <div class="help-text" id="helpText" style="display:none;"></div>
+
+    <script>
+        const pyramid = document.getElementById('pyramid');
+        const colorInput = document.getElementById('colorInput');
+        const helpText = document.getElementById('helpText');
+        let rowCount = 6; // Výchozí počet řádků
+
+        // Uchovává barvy pro každý hexagon
+        let hexagonColors = {};
+
+        // Generování pyramidy
+        function generatePyramid() {
+            pyramid.innerHTML = ''; // Vymazat současnou pyramidu
+            let hexagonIndex = 1;
+
+            for (let i = 1; i <= rowCount; i++) {
+                const row = document.createElement('div');
+                row.className = 'row';
+
+                for (let j = 0; j < i; j++) {
+                    const hexagon = document.createElement('div');
+                    hexagon.className = 'hexagon';
+                    hexagon.setAttribute('data-index', hexagonIndex);
+
+                    const span = document.createElement('span');
+                    span.textContent = hexagonIndex;
+                    hexagon.appendChild(span);
+
+                    // Obnovit barvu, pokud byla nastavena dříve
+                    if (hexagonColors[hexagonIndex]) {
+                        hexagon.style.backgroundColor = hexagonColors[hexagonIndex];
+                        span.style.color = (hexagonColors[hexagonIndex] === 'black' || hexagonColors[hexagonIndex] === 'blue') ? 'white' : 'black';
+                    }
+
+                    row.appendChild(hexagon);
+                    hexagonIndex++;
+                }
+
+                pyramid.appendChild(row);
+            }
+
+            attachMouseEvents();
+        }
+
+        // Funkce pro připojení posluchačů událostí myši
+        function attachMouseEvents() {
+            document.querySelectorAll('.hexagon').forEach(hexagon => {
+                hexagon.addEventListener('mouseenter', () => {
+                    currentHexagon = hexagon;
+                });
+
+                hexagon.addEventListener('mouseleave', () => {
+                    currentHexagon = null;
+                });
+            });
+        }
+
+        generatePyramid(); // Inicializace pyramidy
+
+        let currentHexagon = null;
+
+        const colorShortcuts = {
+            a: 'blue',
+            d: 'orange',
+            w: 'black',
+            s: 'white'
+        };
+
+        const colorNames = {
+            blue: 'blue',
+            orange: 'orange',
+            black: 'black',
+            white: 'white'
+        };
+
+        document.addEventListener('keydown', event => {
+            if (!currentHexagon) return;
+
+            let color;
+            switch (event.key.toLowerCase()) {
+                case 'a':
+                    color = 'blue';
+                    break;
+                case 'd':
+                    color = 'orange';
+                    break;
+                case 'w':
+                    color = 'black';
+                    break;
+                case 's':
+                    color = 'white';
+                    break;
+                default:
+                    return;
+            }
+
+            currentHexagon.style.backgroundColor = color;
+
+            const textColor = (color === 'black' || color === 'blue') ? 'white' : 'black';
+            currentHexagon.querySelector('span').style.color = textColor;
+
+            const hexIndex = parseInt(currentHexagon.getAttribute('data-index'));
+            hexagonColors[hexIndex] = color;
+
+            colorInput.value = '';
+        });
+
+        colorInput.addEventListener('input', () => {
+            const value = colorInput.value.trim();
+            let color, hexIndex;
+
+            const regex = /^(\d+)([a-zA-Z]+)$/;
+            const match = value.match(regex);
+
+            if (match) {
+                hexIndex = parseInt(match[1]);
+                const colorInputValue = match[2].toLowerCase();
+                color = colorShortcuts[colorInputValue] || colorNames[colorInputValue];
+                if (!color || isNaN(hexIndex)) return;
+            }
+
+            if (!color || isNaN(hexIndex)) return;
+
+            const hexagon = document.querySelector(`.hexagon[data-index="${hexIndex}"]`);
+            if (!hexagon) return;
+
+            hexagon.style.backgroundColor = color;
+
+            const textColor = (color === 'black' || color === 'blue') ? 'white' : 'black';
+            hexagon.querySelector('span').style.color = textColor;
+
+            hexagonColors[hexIndex] = color;
+
+            colorInput.value = '';
+        });
+
+        colorInput.addEventListener('input', () => {
+            const value = colorInput.value.trim().toLowerCase();
+
+            if (value === 'o') {
+                rowCount++;
+                generatePyramid();
+                colorInput.value = '';
+            }
+
+            if (value === 'l' && rowCount > 1) {
+                rowCount--;
+                generatePyramid();
+                colorInput.value = '';
+            }
+
+            if (value === 'help') {
+                if (helpText.style.display === 'none') {
+                    helpText.style.display = 'block';
+                    helpText.innerHTML = `
+                        <h3>Seznam příkazů:</h3>
+                        <ul>
+                            <li><strong>1a</strong> nebo <strong>1blue</strong> změní barvu šestiúhelníku č. 1 na modrou</li>
+                            <li><strong>a</strong> = Blue, <strong>d</strong> = Orange, <strong>w</strong> = Black, <strong>s</strong> = White</li>
+                            <li><strong>O</strong> přidá nový řádek do pyramidy</li>
+                            <li><strong>L</strong> odebere poslední řádek</li>
+                            <li><strong>help</strong> zobrazí tuto nápovědu</li>
+                        </ul>
+                    `;
+                } else {
+                    helpText.style.display = 'none';
+                }
+                colorInput.value = '';
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                if (colorInput.classList.contains('open')) {
+                    colorInput.classList.remove('open');
+                } else {
+                    colorInput.classList.add('open');
+                    colorInput.focus();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
