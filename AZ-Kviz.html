@@ -77,7 +77,7 @@
 </head>
 <body>
     <div class="pyramid" id="pyramid"></div>
-    <input type="text" id="colorInput" placeholder="Například: 1a nebo 2blue. O přidá řádek, L odebere.">
+    <input type="text" id="colorInput" placeholder="Například: 1m nebo 2c. O přidá řádek, L odebere.">
     <div class="help-text" id="helpText" style="display:none;"></div>
 
     <script>
@@ -141,17 +141,17 @@
         let currentHexagon = null;
 
         const colorShortcuts = {
-            a: 'blue',
-            d: 'orange',
-            w: 'black',
-            s: 'white'
+            m: 'blue',
+            o: 'orange',
+            c: 'black',
+            b: 'white'
         };
-
+//bila, cerna, modra, oranzova
         const colorNames = {
-            blue: 'blue',
-            orange: 'orange',
-            black: 'black',
-            white: 'white'
+            modra: 'blue',
+            oranzova: 'orange',
+            cerna: 'black',
+            bila: 'white'
         };
 
         document.addEventListener('keydown', event => {
@@ -159,16 +159,16 @@
 
             let color;
             switch (event.key.toLowerCase()) {
-                case 'a':
+                case 'm':
                     color = 'blue';
                     break;
-                case 'd':
+                case 'o':
                     color = 'orange';
                     break;
-                case 'w':
+                case 'c':
                     color = 'black';
                     break;
-                case 's':
+                case 'b':
                     color = 'white';
                     break;
                 default:
@@ -236,11 +236,12 @@
                     helpText.innerHTML = `
                         <h3>Seznam příkazů:</h3>
                         <ul>
-                            <li><strong>1a</strong> nebo <strong>1blue</strong> změní barvu šestiúhelníku č. 1 na modrou</li>
-                            <li><strong>a</strong> = Blue, <strong>d</strong> = Orange, <strong>w</strong> = Black, <strong>s</strong> = White</li>
+                            <li><strong>1m</strong> změní barvu šestiúhelníku č. 1 na modrou</li>
+                            <li><strong>m</strong> = Blue, <strong>o</strong> = Orange, <strong>c</strong> = Black, <strong>b</strong> = White</li>
+                            <li><strong>najetí myší</strong> na šestiúhelník a <strong>stisknutí klávesy</strong> šestiúhelník přebarví.</li>
                             <li><strong>O</strong> přidá nový řádek do pyramidy</li>
                             <li><strong>L</strong> odebere poslední řádek</li>
-                            <li><strong>help</strong> zobrazí tuto nápovědu</li>
+                            <li><strong>help</strong> zobrazí/skryje tuto nápovědu</li>
                         </ul>
                     `;
                 } else {
