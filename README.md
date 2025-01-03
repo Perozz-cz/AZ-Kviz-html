@@ -10,31 +10,23 @@ Tento projekt je interaktivní webová stránka v jednom HTML souboru, která ob
 
 ## Otevření
 1. **Stažení:** Stáhněte si soubor `az-kviz-pyramida.html`.
+
 2. **Spuštění:** Otevřete soubor ve webovém prohlížeči.
-3. **Hraní:**
-   - Klikněte na libovolné políčko, aby se zobrazila otázka.
-   - Odpovězte správně, abyste získali kontrolu nad políčkem.
-   - Spojte základnu pyramidy s jejím vrcholem dříve než váš soupeř.
+
+3. **Ovládání:**
 
 ## Ovládání
+- Stisknutím klávesy enter otevřete pole pro zadávání příkazů.
 
+- Políčko přebarvíte buď najetím myší na dané políčko a stisknutí klávesy w, a, s, d, podle barvy kterou chcete (d = Blue, a = Orange, w = Black, s = White), nebo napsání příkazu který vypadá například jako: "1a" nebo třeba jako "1orange".
 ## Struktura projektu
 Tento projekt obsahuje jediný soubor:
+
 - `az-kviz-pyramida.html`: Kompletní HTML, CSS a JavaScript pro funkční webovou stránku.
+
 
 ## Požadavky
 - Jakýkoli moderní webový prohlížeč (Chrome, Firefox, Edge, atd.).
 
-## Přizpůsobení
-- Otázky: Můžete přidat nebo upravit otázky v sekci JavaScriptu.
-- Styl: Upravit vzhled pyramidy nebo stránky pomocí CSS stylů v souboru.
-
 ## Náhled
 ![Náhled AZ Kvíz Pyramidy](#)
-
-## Autor
-Vytvořeno jako jednoduchý vzdělávací projekt pro zábavu.
-
-## Licence
-Tento projekt je dostupný pod licencí MIT. Cítíte se svobodně jej používat, modifikovat a distribuovat.
-
