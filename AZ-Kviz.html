@@ -141,10 +141,10 @@
         let currentHexagon = null;
 
         const colorShortcuts = {
-            m: 'blue',
-            o: 'orange',
-            c: 'black',
-            b: 'white'
+            d: 'blue',
+            a: 'orange',
+            w: 'black',
+            s: 'white'
         };
 //bila, cerna, modra, oranzova
         const colorNames = {
@@ -159,16 +159,16 @@
 
             let color;
             switch (event.key.toLowerCase()) {
-                case 'm':
+                case 'd':
                     color = 'blue';
                     break;
-                case 'o':
+                case 'a':
                     color = 'orange';
                     break;
-                case 'c':
+                case 'w':
                     color = 'black';
                     break;
-                case 'b':
+                case 's':
                     color = 'white';
                     break;
                 default:
@@ -236,8 +236,8 @@
                     helpText.innerHTML = `
                         <h3>Seznam příkazů:</h3>
                         <ul>
-                            <li><strong>1m</strong> změní barvu šestiúhelníku č. 1 na modrou</li>
-                            <li><strong>m</strong> = Blue, <strong>o</strong> = Orange, <strong>c</strong> = Black, <strong>b</strong> = White</li>
+                            <li>například <strong>1d</strong> nebo <strong>1modra</strong> změní barvu šestiúhelníku č. 1 na modrou</li>
+                            <li><strong>d</strong> = Blue, <strong>a</strong> = Orange, <strong>w</strong> = Black, <strong>s</strong> = White</li>
                             <li><strong>najetí myší</strong> na šestiúhelník a <strong>stisknutí klávesy</strong> šestiúhelník přebarví.</li>
                             <li><strong>O</strong> přidá nový řádek do pyramidy</li>
                             <li><strong>L</strong> odebere poslední řádek</li>
