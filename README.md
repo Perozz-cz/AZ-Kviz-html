@@ -27,6 +27,3 @@ Tento projekt obsahuje jediný soubor:
 
 ## Požadavky
 - Jakýkoli moderní webový prohlížeč (Chrome, Firefox, Edge, atd.).
-
-## Náhled
-![Náhled AZ Kvíz Pyramidy](#)
