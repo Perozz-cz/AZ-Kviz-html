@@ -16,7 +16,7 @@ Tento projekt je interaktivní webová stránka v která se zkládá z jednoho H
 ## Ovládání
 - Stisknutím klávesy "Enter" otevřete pole pro zadávání příkazů.
 
-- Políčko přebarvíte buď najetím myší na dané políčko a stisknutí klávesy w, a, s, d, podle barvy kterou chcete (d = Blue, a = Orange, w = Black, s = White), nebo napsání příkazu který vypadá například jako: "1a" nebo třeba jako "1orange".
+- Políčko přebarvíte buď najetím myší na dané políčko a stisknutí klávesy w, a, s, d, podle barvy kterou chcete (d = modra, a = oranzova, w = cerna, s = bila), nebo napsání příkazu který vypadá například jako: "1a" nebo třeba jako "1oranzova".
 ## Struktura projektu
 Tento projekt obsahuje jediný soubor:
 
