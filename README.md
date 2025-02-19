@@ -5,7 +5,7 @@ Tento projekt je interaktivní webová stránka, která se skládá z jednoho HT
 ## Funkce
 - **Jednoduchá a intuitivní grafika:** Pyramida s interaktivními políčky.
 - **Měnitelnost velikosti pyramidy:** Uživatel může zadat příkaz pro přidání nebo odebránání patra pyramidy.
-- **Interaktivita:** Zadáním příkazu nebo najetim na policko pyramidy a stisknutim klavesi barvy se dá jednoduše přebarvit pyramida.
+- **Interaktivita:** Zadáním příkazu nebo najetím na políčko pyramidy a stisknutim klavesy barvy se dá jednoduše přebarvit pyramida.
 
 
 ## Otevření
@@ -15,8 +15,14 @@ Tento projekt je interaktivní webová stránka, která se skládá z jednoho HT
 
 ## Ovládání
 - Stisknutím klávesy "Enter" otevřete pole pro zadávání příkazů.
-
+  
 - Políčko přebarvíte buď najetím myší na dané políčko a stisknutí klávesy w, a, s, d, podle barvy kterou chcete (d = modra, a = oranzova, w = cerna, s = bila), nebo napsání příkazu který vypadá například jako: "1a" nebo třeba jako "1oranzova".
+
+### Seznam příkazů použitelných v textovém poli
+- `help` - zobrazí/skryje nápovědu
+- `o` - přídá řádek pyramidy
+- `l` - odebere řádek pyramidy
+- [cislo policka] [barva] - zmení barvu policka (např. `7a`)
 ## Struktura projektu
 Tento projekt obsahuje jediný soubor:
 
