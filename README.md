@@ -20,7 +20,7 @@ Tento projekt je interaktivní webová stránka, která se skládá z jednoho HT
    - `o` - přídá řádek pyramidy
    - `l` - odebere řádek pyramidy
   
-- Políčko přebarvíte buď najetím myší na dané políčko a stisknutí klávesy w, a, s, d, podle barvy kterou chcete (d = modra, a = oranzova, w = cerna, s = bila), nebo napsání příkazu který vypadá například jako: "1a" nebo třeba jako "1oranzova".
+- Políčko přebarvíte buď najetím myší na dané políčko a stisknutí klávesy w, a, s, d, podle barvy kterou chcete (d = modra, a = oranzova, w = cerna, s = bila), nebo napsáním příkazu, který vypadá například jako: "1a" nebo třeba jako "1oranzova".
 
 ## Struktura projektu
 Tento projekt obsahuje jediný soubor:
