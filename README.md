@@ -15,7 +15,7 @@ Tento projekt je interaktivní webová stránka, která se skládá z jednoho HT
 
 ## Ovládání
 - Stisknutím klávesy "Enter" otevřete pole pro zadávání příkazů.
--  #### Seznam příkazů použitelných v textovém poli
+- Seznam příkazů použitelných v textovém poli
    - `help` - zobrazí/skryje nápovědu
    - `o` - přídá řádek pyramidy
    - `l` - odebere řádek pyramidy
