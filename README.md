@@ -15,14 +15,13 @@ Tento projekt je interaktivní webová stránka, která se skládá z jednoho HT
 
 ## Ovládání
 - Stisknutím klávesy "Enter" otevřete pole pro zadávání příkazů.
-  
-- Políčko přebarvíte buď najetím myší na dané políčko a stisknutí klávesy w, a, s, d, podle barvy kterou chcete (d = modra, a = oranzova, w = cerna, s = bila), nebo napsání příkazu který vypadá například jako: "1a" nebo třeba jako "1oranzova".
-
 #### Seznam příkazů použitelných v textovém poli
 - `help` - zobrazí/skryje nápovědu
 - `o` - přídá řádek pyramidy
 - `l` - odebere řádek pyramidy
-- [cislo policka] [barva] - zmení barvu policka (např. `7a`)
+  
+- Políčko přebarvíte buď najetím myší na dané políčko a stisknutí klávesy w, a, s, d, podle barvy kterou chcete (d = modra, a = oranzova, w = cerna, s = bila), nebo napsání příkazu který vypadá například jako: "1a" nebo třeba jako "1oranzova".
+
 ## Struktura projektu
 Tento projekt obsahuje jediný soubor:
 
