@@ -1,10 +1,10 @@
 # Interaktivní AZ Kvíz Pyramida
 
-Tento projekt je interaktivní webová stránka v která se zkládá z jednoho HTML souboru, který obsahuje interaktivní hrací plochu hry AZ kvíz.
+Tento projekt je interaktivní webová stránka, která se skládá z jednoho HTML souboru, který obsahuje interaktivní hrací plochu hry AZ kvíz.
 
 ## Funkce
 - **Jednoduchá a intuitivní grafika:** Pyramida s interaktivními políčky.
-- **Mněnitelnost velikosti pyramidy:** Uživatel může zadat příkaz pro přidání nebo odebránání patra pyramidy.
+- **Měnitelnost velikosti pyramidy:** Uživatel může zadat příkaz pro přidání nebo odebránání patra pyramidy.
 - **Interaktivita:** Zadáním příkazu nebo najetim na policko pyramidy a stisknutim klavesi barvy se dá jednoduše přebarvit pyramida.
 
 
